@@ -1,27 +1,23 @@
 <template>
-  <div class="">
-   
+  <div class="Home">
+    <header-comp></header-comp>
   </div>
 </template>
 
 <script>
+import Headers from "./Header.vue";
 export default {
-  name:"home-comp",
-  components: {},
+  name: "home-comp",
+  components: {
+    "header-comp": Headers,
+  },
 
   data() {
-    return {
-    
-    };
+    return {};
   },
 
-  methods: {
- 
-  },
+  methods: {},
 };
 </script>
 
-<style>
-
-
-</style>
+<style></style>
