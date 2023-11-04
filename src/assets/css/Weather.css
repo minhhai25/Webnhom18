@@ -1,0 +1,56 @@
+#test{
+    text-align: center;
+
+}
+.container {
+    border: 1px solid rgb(188 182 182 / 42%);
+    padding: 0px;
+}
+.weather-details {
+    /* background-color: antiquewhite; */
+    display: flex;
+    justify-content: space-between;
+}
+.weather-details__basic {
+    display: flex;
+    width: 50%;
+    border-right: 1px solid #a7a3a3;
+}
+.weather-details__current{
+    width: 50%;
+}
+.weather-details__today {
+    width: 50%;
+}
+.weather-details__today__details {
+    display: flex;
+    margin-left: 6rem;
+}
+
+.weather-details__today__temp{
+    display: inline;
+    font-size: 80px;
+   
+
+}
+.high-temp {
+    margin: 0 10px;
+}
+
+    .weather-details__additional-info {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row; 
+        justify-content: space-between;
+        width: 50%;
+        padding-top: 1.5rem;
+    }
+
+    .flex-col {
+        flex: 0 1 calc(25% - 10px); 
+        margin-bottom: 10px; 
+    }
+    .label {
+        display: block;
+    }
+
