@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Headers from "./Header.vue";
+import Headers from "./Forecast.vue";
 export default {
   name: "home-comp",
   components: {
