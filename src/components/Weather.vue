@@ -59,6 +59,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import '../assets/css/Weather.css';
 export default {
   name  ,
@@ -68,15 +69,23 @@ export default {
     }
   },
   methods: {
-    async getApi() {
-        try {
-             const response = await axios.get(
-          "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=e8b73f475dc0329093efe408af675a72"
+       async getApi() {
+      try {
+        const response = await axios.get(
+          "https://api.openweathermap.org/data/2.5/weather?q=Hanoi&appid=e8b73f475dc0329093efe408af675a72"
+          //lấy theo tên thành phố
         );
-            console.log();
-        } catch (error) {
-            console.log(error)
-        }
+
+        const tasks = response.data.map((task) => ({
+          id: task.id,
+          title: task.title,
+        }));
+        tasks.forEach((task) => {
+          this.setTask(task);
+        });
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 }
