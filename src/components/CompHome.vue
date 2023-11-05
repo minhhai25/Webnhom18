@@ -2,18 +2,19 @@
   <div class = " home">
     <h1>Weather</h1>
     <weather-page></weather-page>
-    <header-comp></header-comp>
+  <forecast></forecast>
+   
   </div>
 </template>
 <script>
 import WeatherPage from './Weather.vue';
-import Headers from "./Header.vue";
+import Forecast from "./Forecast.vue";
 
 export default {
  components: {
     // HelloWorld
     WeatherPage,
-     "header-comp": Headers,
+      Forecast,
   },
   name
 
