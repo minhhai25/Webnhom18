@@ -24,7 +24,7 @@
 }
 .weather-details__today__details {
     display: flex;
-    margin-left: 6rem;
+    /* margin-left: 6rem; */
 }
 
 .weather-details__today__temp{
@@ -33,9 +33,23 @@
    
 
 }
-.high-temp {
-    margin: 0 10px;
+.weather-details__today__details{
+    display: flex; /* Sử dụng flexbox để căn chỉnh hình ảnh và nhiệt độ cùng hàng */
+    align-items: center;
 }
+.row{
+    display: flex;
+}
+
+
+  .cod-md-4 img {
+   width: 15%   ;
+   margin-right: 5px; 
+  }
+ 
+  
+
+  
 
     .weather-details__additional-info {
         display: flex;
