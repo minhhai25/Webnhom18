@@ -1,0 +1,84 @@
+
+.forecast-button{
+    color:#232a31;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+.hour-button {
+    align-items: center;
+    background-color:#ffffff ;
+    border-radius: 22px;
+    color:#1d2228;
+    display: flex;
+    font-family: _OpenSans;
+    font-size: 12px;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 28px;
+    padding: 1px 6px;
+    text-align: center;
+}
+.date-button {
+    align-items: center;
+    color:#1d2228;
+    display: flex;
+    font-family: _OpenSans;
+    font-size: 12px;
+    justify-content: center;
+    line-height: 28px;
+    padding: 1px 6px;
+    text-align: center;
+}
+div.col-md-2 {
+    display: grid;
+}
+.date {
+    color:#232a31;
+    font-size:  14px;
+    font-weight:500;
+    line-height:16px;
+    margin:0px 0px 22px;
+    text-align: center;
+    text-transform:capitalize;
+}
+.anh {
+    color:#232a31;
+    text-align: center;
+}
+.temp {
+    color:#232a31;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 22px 0px 0px;
+    text-align:center;
+}
+.change{
+    color:#232a31;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    margin: 16px 0px 0px;
+    text-align: center;
+}
+.mua{
+    color:#232a31;
+    display: inline;
+    fill:#979ea8;
+    font-size: 12px;
+    font-weight: 60;
+    line-height: 16px;
+    text-align: center;
+}
+.rain{
+    color:#232a31;
+    display: inline;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: center;
+}
+
+.weather-hour{
+    margin-top: 3rem;
+}
