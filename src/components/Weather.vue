@@ -43,7 +43,7 @@
                   </span>
                 </div>
                 <div class="cod-md-4">
-                  <img src="../assets/images/mua.png" alt="" />
+                  <img src="../assets/images/nuoc.png" alt="" />
                   <span>
                     <span class="weather__unit--metric" aria-label="humidity"
                       ><span aria-hidden="true">54%</span></span
@@ -78,18 +78,7 @@ export default {
   data() {
     return {};
   },
-  methods: {
-    // async getApi() {
-    //     try {
-    //          const response = await axios.get(
-    //       "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=e8b73f475dc0329093efe408af675a72"
-    //     );
-    //         console.log();
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-    // },
-  },
+  methods: {},
 };
 </script>
 
