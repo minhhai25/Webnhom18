@@ -15,15 +15,15 @@
                                 </span>
                             </span>
                         </div>
-<<<<<<< HEAD
+
                         <div class="row">
                         <div class="weather-details__today__details ">
                             <div class="cod-md-4">
                                 <img src="../assets/images/upload.png" alt="" >
-=======
-                        <div class="low-temp">
+
+                                
                        
->>>>>>> f1dcd4839858683a6e503966efcddcf5828bd5e5
+
                                 <span>
                                     <span class="weather__unit--metric" aria-label="31° celsius">
                                         <span aria-hidden="true">31°</span>
@@ -73,16 +73,16 @@ export default {
     }
   },
   methods: {
-    async getApi() {
-        try {
-             const response = await axios.get(
-          "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=e8b73f475dc0329093efe408af675a72"
-        );
-            console.log();
-        } catch (error) {
-            console.log(error)
-        }
-    },
+    // async getApi() {
+    //     try {
+    //          const response = await axios.get(
+    //       "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=e8b73f475dc0329093efe408af675a72"
+    //     );
+    //         console.log();
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // },
   },
 }
 </script>
