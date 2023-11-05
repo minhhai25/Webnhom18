@@ -49,8 +49,6 @@
  
   
 
-  
-
     .weather-details__additional-info {
         display: flex;
         flex-wrap: wrap;
@@ -67,4 +65,3 @@
     .label {
         display: block;
     }
-
