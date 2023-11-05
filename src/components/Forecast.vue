@@ -65,7 +65,7 @@
 
 <script>
 export default {
-  name:"header-comp",
+  name:"forecast-comp",
   components: {},
 
   data() {
