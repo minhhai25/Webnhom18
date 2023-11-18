@@ -1,6 +1,7 @@
 <template>
   <div class = " home">
     <h1>Weather</h1>
+   
     <weather-page></weather-page>
   <forecast></forecast>
    

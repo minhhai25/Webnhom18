@@ -1,8 +1,9 @@
 .forecast-button {
-  color: #232a31;
-  display: flex;
-  justify-content: center;
-  text-align: left;
+    color: #232a31;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 25px 0;
 }
 .hour-button {
   align-items: center;
@@ -17,6 +18,7 @@
   line-height: 28px;
   padding: 1px 6px;
   text-align: center;
+  margin : 0 20px;
 }
 .date-button {
   align-items: center;

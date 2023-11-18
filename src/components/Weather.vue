@@ -1,7 +1,8 @@
 <template>
   <div id="test">
-    <div class="container">
+    <div class="container" v-for="ctn in name" :key="ctn.id">
       <div class="weather-details">
+         <!-- <input type="text" > -->
         <div class="weather-details__basic">
           <div class="weather-details__current">
             <img
@@ -73,13 +74,33 @@
 
 <script>
 import "../assets/css/Weather.css";
+import axios from"axios";
 export default {
   name,
   data() {
     return {};
   },
-  methods: {},
-};
+  methods: {
+     async getApi() {
+      try {
+        const response = await axios.get(
+          "https://api.openweathermap.org/data/2.5/weather?q=Hanoi&appid=e8b73f475dc0329093efe408af675a72"
+          //lấy theo tên thành phố
+        );
+         console.log(response.data);
+         this.name= response.data;
+
+        
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
+  mounted(){
+    this.getApi();
+  }
+}
+
 </script>
 
 <style scoped></style>
