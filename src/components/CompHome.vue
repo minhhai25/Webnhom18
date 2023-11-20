@@ -27,6 +27,6 @@ export default {
 </script>
 <style>
 .container {
-  border: none;
+  border: none !important;
 }
 </style>

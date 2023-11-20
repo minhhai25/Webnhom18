@@ -1,6 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Weather from "../components/Weather";
+import Threedays from "../components/Threedays";
+import FiveDays from "../components/FiveDays";
 import SevenDays from "../components/SevenDays";
 import TenDays from "../components/TenDays";
 import FifteenDays from "../components/FifteenDays";
@@ -13,7 +15,16 @@ const routes = [
     name: "Weather",
     component: Weather,
   },
-
+  {
+    path: "/Threedays",
+    name: "Threedays",
+    component: Threedays,
+  },
+  {
+    path: "/FiveDays",
+    name: "FiveDays",
+    component: FiveDays,
+  },
   {
     path: "/SevenDays",
     name: "SevenDays",

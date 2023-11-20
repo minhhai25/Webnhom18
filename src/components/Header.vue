@@ -38,10 +38,14 @@
               <a class="nav-link" href="/ha-noi/ngay-mai"> Ngày mai </a>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link" href="/ha-noi/3-ngay-toi"> 3 ngày tới </a>
+              <router-link to="/Threedays" class="nav-link">
+                3 ngày tới
+              </router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link"> 5 ngày tới </a>
+              <router-link to="/FiveDays" class="nav-link">
+                5 ngày tới
+              </router-link>
             </li>
             <li class="nav-item">
               <router-link to="/SevenDays" class="nav-link">
