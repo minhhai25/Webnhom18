@@ -1,6 +1,6 @@
 <template>
   <div id="test">
-    <!-- <div class="container"> -->
+    
     <div class="weather-details">
       <div class="weather-details__basic">
         <div class="weather-details__current">
@@ -63,7 +63,7 @@
       </div>
     </div>
   </div>
-  <!-- </div> -->
+
 </template>
 
 <script>
@@ -72,20 +72,23 @@ import axios from"axios";
 export default {
   name,
   data() {
-    return {};
+    return {
+      cityName:'',
+      weatherData:null,
+    };
   },
   methods: {
-     async getApi() {
+     async  getWeatherData() {
       try {
         const response = await axios.get(
            //lấy theo tên thành phố
-          "https://api.openweathermap.org/data/2.5/weather?q=Hanoi&appid=e8b73f475dc0329093efe408af675a72"
+          "https://api.openweathermap.org/data/2.5/weather?q=${this.cityName}&appid=e8b73f475dc0329093efe408af675a72"
          
 
         );
         // const response = await axios.get("https://api.openweathermap.org/data/2.5/forecast/daily?q=Hanoi&cnt=7&appid=e8b73f475dc0329093efe408af675a72");
          console.log(response.data);
-         this.name= response.data;
+         this.weatherData= response.data;
 
         
       } catch (error) {
