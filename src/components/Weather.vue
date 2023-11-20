@@ -1,8 +1,14 @@
 <template>
   <div id="test">
     
-    <div class="weather-details">
-      <div class="weather-details__basic">
+    <div class="weather-details" 
+  
+    >
+      <div class="input-wrapper">
+      <input type="text" v-model="cityName" placeholder="Enter city name" />
+      <button @click="getWeatherData">Get Weather</button>
+    </div>
+      <div class="weather-details__basic" >
         <div class="weather-details__current">
           <img
             src="../assets/images/1.png"
@@ -15,7 +21,7 @@
           <div class="weather-details__today__temp">
             <span>
               <span class="weather__unit--metric" aria-label="27° celsius">
-                <span aria-hidden="true">27°</span>
+                <span aria-hidden="true">{{currentTemperature}}°C</span>
               </span>
             </span>
           </div>
@@ -27,7 +33,7 @@
 
                 <span>
                   <span class="weather__unit--metric" aria-label="31° celsius">
-                    <span aria-hidden="true">31°</span>
+                    <span aria-hidden="true">{{maxTemp}}°</span>
                   </span>
                 </span>
               </div>
@@ -35,7 +41,7 @@
                 <img src="../assets/images/dowload.png" alt="" />
                 <span>
                   <span class="weather__unit--metric" aria-label="24° celsius"
-                    ><span aria-hidden="true">24°</span></span
+                    ><span aria-hidden="true">{{minTemp}}°</span></span
                   >
                 </span>
               </div>
@@ -43,7 +49,7 @@
                 <img src="../assets/images/nuoc.png" alt="" class="img-nuoc" />
                 <span>
                   <span class="weather__unit--metric" aria-label="humidity"
-                    ><span aria-hidden="true">54%</span></span
+                    ><span aria-hidden="true">{{humidity}}%</span></span
                   >
                 </span>
               </div>
@@ -53,8 +59,8 @@
       </div>
       <div class="weather-details__additional-info">
         <div class="flex-col">6:00AM<span class="label">Sunrise</span></div>
-        <div class="flex-col">83%<span class="label">Humidity</span></div>
-        <div class="flex-col">29.86 in<span class="label">Pressure</span></div>
+        <div class="flex-col">{{humidity}}%<span class="label">Humidity</span></div>
+        <div class="flex-col">{{pressure}} in<span class="label">Pressure</span></div>
         <div class="flex-col">--<span class="label">UV Index</span></div>
         <div class="flex-col">6:00AM<span class="label">Sunrise</span></div>
         <div class="flex-col">5km/h<span class="label">Wind</span></div>
@@ -73,32 +79,41 @@ export default {
   name,
   data() {
     return {
-      cityName:'',
-      weatherData:null,
+      cityName:"",
+      weatherData:[],
+      currentTemperature: '',
+      humidity: '',
+      maxTemp:'',
+      minTemp: '',
+    pressure: '',
+    
     };
   },
   methods: {
      async  getWeatherData() {
+             console.log(this.cityName)
       try {
-        const response = await axios.get(
-           //lấy theo tên thành phố
-          "https://api.openweathermap.org/data/2.5/weather?q=${this.cityName}&appid=e8b73f475dc0329093efe408af675a72"
-         
-
+         const response = await axios.get(
+          `https://api.openweathermap.org/data/2.5/weather?q=${this.cityName}&appid=e8b73f475dc0329093efe408af675a72`
         );
-        // const response = await axios.get("https://api.openweathermap.org/data/2.5/forecast/daily?q=Hanoi&cnt=7&appid=e8b73f475dc0329093efe408af675a72");
+          this.currentTemperature = Math.round(response.data.main.temp - 273.15); 
+          this.minTemp=Math.round(response.data.main.temp_min - 273.15); 
+            this.maxTemp=Math.round(response.data.main.temp_max - 273.15); 
          console.log(response.data);
          this.weatherData= response.data;
+         this.humidity= response.data.main.humidity;
+         this.pressure= Math.round(response.data.main.pressure * 0.029529987);
 
         
       } catch (error) {
         console.log(error);
+        this.weatherData= null;
       }
     },
   },
-  mounted(){
-    this.getApi();
-  }
+  // mounted(){
+  //   this. getWeatherData();
+  // }
 }
 
 </script>
