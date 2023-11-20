@@ -1,25 +1,32 @@
 <template>
   <div class="home">
     <div class="container">
-      <h1>Weather</h1>
       <headers></headers>
-      <weather-page></weather-page>
-      <forecast></forecast>
+      <router-view></router-view>
+      <!-- <seven-days-vue></seven-days-vue> -->
+      <!-- <weather-page></weather-page>
+      <forecast></forecast>  -->
     </div>
   </div>
 </template>
 <script>
-import WeatherPage from "./Weather.vue";
-import Forecast from "./Forecast.vue";
+// import SevenDaysVue from "./SevenDays.vue";
+// import WeatherPage from "./Weather.vue";
+// import Forecast from "./Forecast.vue";
 import Headers from "./Header.vue";
 export default {
   components: {
-    // HelloWorld
-    WeatherPage,
-    Forecast,
+    // // HelloWorld
+    // WeatherPage,
+    // Forecast,
     Headers,
+    // SevenDaysVue,
   },
   name,
 };
 </script>
-<style></style>
+<style>
+.container {
+  border: none !important;
+}
+</style>

@@ -1,0 +1,44 @@
+.weather-date-title {
+  text-align: center;
+  color: #212529;
+  font-size: 18px;
+  font-weight: 700;
+  grid-area: auto;
+  line-height: 21.6px;
+}
+.overview-caption-item-detail {
+  color: #212529;
+  font-weight: 600;
+  grid-area: auto;
+  line-height: 20px;
+  margin: 10px 0px 14px;
+}
+.overview-caption-item {
+  color: #212529;
+  font-weight: 600;
+  grid-area: auto;
+  line-height: 20px;
+}
+
+span.current-temperature {
+  font-size: 70px;
+}
+
+.d-flex.flex-wrap {
+  display: flex;
+  align-items: flex-end;
+}
+
+.overview-current {
+  display: flex;
+  align-items: flex-end;
+}
+h1 a {
+  font-size: 18px;
+}
+.weather-date.shadow-sm {
+  margin-bottom: 2rem;
+}
+/* .d-flex {
+    display: flex!important;
+} */

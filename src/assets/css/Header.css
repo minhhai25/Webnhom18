@@ -1,4 +1,24 @@
-h1 span {
+input#searchInput {
+  width: 600px;
+  height: 55px;
+}
+
+.my-3.sticky-top {
+  width: 100%;
+  background-color: #274e87;
+}
+
+a.nav-link {
+  color: white;
+}
+
+a.nav-link:hover {
+  color: white;
+  background-color: rgb(57, 122, 219);
+  border-radius: 0px;
+}
+
+/* h1 span {
   color: red;
 }
 
@@ -15,4 +35,4 @@ input.search {
   height: 2.5rem;
   padding: 1rem;
   border: 0.5px solid #615e5ec9;
-}
+} */

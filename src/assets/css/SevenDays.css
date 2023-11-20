@@ -1,0 +1,77 @@
+svg {
+  width: 20px;
+}
+summary::marker {
+  display: none;
+}
+
+.weather-summary-toggle {
+  list-style-type: none; /* Ẩn mũi tên của ::marker */
+}
+h1 > a {
+  color: #212529;
+}
+a {
+  text-decoration: none !important;
+}
+details.weather-day.text-dark {
+  border-bottom: 1px solid #dfd2d2;
+}
+/*   */
+.weather-summary {
+  display: list-item;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px 0px;
+  width: 100%;
+  padding-left: 0;
+  list-style: none;
+}
+
+.weather-summary-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.weather-summary-title {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 100%;
+  font-size: 0.875rem;
+}
+.summary-day {
+  padding-right: 6px;
+  flex: 0 0 70px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 0.875rem !important;
+  white-space: nowrap;
+}
+.summary-temperature {
+  padding: 0 6px 0 0;
+  flex: 0 0 90px;
+  display: flex;
+  align-items: center;
+}
+.summary-description {
+  padding-right: 6px;
+  margin: 0;
+  flex: 1 1 auto;
+  align-items: center;
+  text-align: center;
+}
+.summary-humidity {
+  padding-right: 6px;
+  flex: 0 0 80px;
+  display: flex;
+  align-items: center;
+}
+.summary-speed {
+  flex: 0 0 125px;
+  display: flex;
+  align-items: center;
+  min-width: 125px;
+}
