@@ -2,15 +2,23 @@
   <div class="forecast">
     <div class="">
       <div class="forecast-button">
-        <button type="button" class="hour-button btn btn-primary">
+        <button
+          type="button"
+          class="hour-button btn btn-primary"
+          @click="switchTo10Days"
+        >
           Hourly
         </button>
-        <button type="button" class="date-button btn btn-primary">
+        <button
+          type="button"
+          class="date-button btn btn-primary"
+          @click="switchToHourly"
+        >
           10 Days
         </button>
       </div>
       <!-- Theo thu -->
-      <div class="row weather-days">
+      <div class="row weather-days" v-if="showHourly">
         <div class="col-md-2">
           <span class="date">Monday</span>
           <span class="anh">
@@ -80,9 +88,9 @@
           </span>
         </div>
       </div>
-      <hr />
+      <!-- <hr /> -->
       <!-- Theo gio -->
-      <div class="row weather-hour">
+      <div class="row weather-hour" v-if="!showHourly">
         <div class="col-md-2">
           <span class="date">2PM</span>
           <span class="anh">
@@ -158,15 +166,31 @@
 
 <script>
 import "../assets/css/Forecast.css";
+import store from "../store/store.js";
 export default {
   name: "forecast-comp",
   components: {},
 
-  data() {
-    return {};
+  // data() {
+  //   return {
+  //     showHourly: true,
+  //   };
+  // },
+
+  computed: {
+    showHourly() {
+      return store.state.showHourly;
+    },
   },
 
-  methods: {},
+  methods: {
+    switchToHourly() {
+      store.commit("switchToHourly");
+    },
+    switchTo10Days() {
+      store.commit("switchTo10Days");
+    },
+  },
 };
 </script>
 
