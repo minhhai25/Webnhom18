@@ -8,20 +8,19 @@
 </template>
 
 <script>
-import CompHome from './components/CompHome.vue';
+import CompHome from "./components/CompHome.vue";
 // import WeatherPage from './components/Weather.vue';
 // import HelloWorld from './components/HelloWorld.vue'
 //import CompHome from './components/CompHome.vue'
 
-
 export default {
-  name: 'App',
+  name: "App",
   components: {
     // HelloWorld
     // WeatherPage,
     CompHome,
-  }
-}
+  },
+};
 </script>
 
 <style>
