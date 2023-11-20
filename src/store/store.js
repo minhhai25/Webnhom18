@@ -1,16 +1,23 @@
-import Vuex from "vuex";
 import Vue from "vue";
+import Vuex from "vuex";
+// import axios from "axios";
+
 Vue.use(Vuex);
+
+
+// store.js
 export default new Vuex.Store({
+  
   state: {
-    showHourly: true,
+    cityName: '',
+    // ... (các trạng thái khác nếu cần)
   },
+  
   mutations: {
-    switchToHourly(state) {
-      state.showHourly = true;
+    setCityName(state, cityName) {
+      state.cityName = cityName;
+      
     },
-    switchTo10Days(state) {
-      state.showHourly = false;
-    },
+    // ... (các mutations khác nếu cần)
   },
 });

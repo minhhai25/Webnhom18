@@ -4,10 +4,10 @@
     <div class="weather-details" 
   
     >
-      <div class="input-wrapper">
+      <!-- <div class="input-wrapper">
       <input type="text" v-model="cityName" placeholder="Enter city name" />
       <button @click="getWeatherData">Get Weather</button>
-    </div>
+    </div> -->
       <div class="weather-details__basic" >
         <div class="weather-details__current">
           <img
@@ -63,7 +63,7 @@
         <div class="flex-col">{{pressure}} in<span class="label">Pressure</span></div>
         <div class="flex-col">--<span class="label">UV Index</span></div>
         <div class="flex-col">6:00AM<span class="label">Sunrise</span></div>
-        <div class="flex-col">5km/h<span class="label">Wind</span></div>
+        <div class="flex-col">{{wind}}km/h<span class="label">Wind</span></div>
         <div class="flex-col">24°<span class="label">Dew Point</span></div>
         <div class="flex-col">10 mi<span class="label">Visibility</span></div>
       </div>
@@ -74,28 +74,37 @@
 
 <script>
 import "../assets/css/Weather.css";
-import axios from"axios";
+// import Header from  "./Header.vue";
+import { mapState } from 'vuex';
+import axios from "axios";
+
 export default {
   name,
+ 
+     computed: {
+    ...mapState(['cityName']),
+  },
   data() {
     return {
-      cityName:"",
+      // cityName:"",
       weatherData:[],
       currentTemperature: '',
       humidity: '',
       maxTemp:'',
       minTemp: '',
     pressure: '',
+    wind: '',
     
     };
   },
   methods: {
      async  getWeatherData() {
-             console.log(this.cityName)
+            //  console.log(this.cityName)
       try {
-         const response = await axios.get(
+           const response = await axios.get(
           `https://api.openweathermap.org/data/2.5/weather?q=${this.cityName}&appid=e8b73f475dc0329093efe408af675a72`
         );
+        console.log("oke")
           this.currentTemperature = Math.round(response.data.main.temp - 273.15); 
           this.minTemp=Math.round(response.data.main.temp_min - 273.15); 
             this.maxTemp=Math.round(response.data.main.temp_max - 273.15); 
@@ -103,19 +112,21 @@ export default {
          this.weatherData= response.data;
          this.humidity= response.data.main.humidity;
          this.pressure= Math.round(response.data.main.pressure * 0.029529987);
+         this.wind=response.data.wind.speed;
 
-        
+         console.log(this.cityName);
       } catch (error) {
         console.log(error);
         this.weatherData= null;
       }
     },
   },
-  // mounted(){
-  //   this. getWeatherData();
-  // }
+  mounted(){
+   this.getWeatherData();
+  }
 }
 
 </script>
+
 
 <style scoped></style>

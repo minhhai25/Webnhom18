@@ -1,4 +1,6 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
+<div>
   <header
     class="d-flex flex-wrap justify-content-center justify-content-sm-between py-3"
   >
@@ -9,17 +11,17 @@
       <img src="../assets/images/logo-header.png" alt="logo" />
     </a>
     <div class="my-3 my-sm-0 mx-sm-4 search-container">
-      <form class="d-flex frmSearch">
-        <input type="hidden" id="searchValue" name="search" />
-        <input
+      <form class="d-flex frmSearch" @submit.prevent="updateCityName">
+        
+        <input 
           class="form-control me-2 search-auto ui-autocomplete-input"
-          type="search"
+          type="text" v-model="cityName"
           placeholder="Hà Nội, Hồ Chí Minh, Đà Nẵng,...."
-          autocomplete="off"
-          aria-label="Search"
+          autocomplete="on"
+          
           id="searchInput"
         />
-        <button class="btn btn-outline-success" type="submit">Tìm kiếm</button>
+        <button class="btn btn-outline-success" type="submit" @click="updateCityName">Tìm kiếm</button>
       </form>
     </div>
     <div class="my-3 sticky-top">
@@ -29,14 +31,7 @@
             <li class="nav-item">
               <router-link to="/" class="nav-link">Hiện tại</router-link>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/ha-noi/theo-gio">
-                Theo giờ
-              </a>
-            </li> -->
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="/ha-noi/ngay-mai"> Ngày mai </a>
-            </li> -->
+            
             <li class="nav-item">
               <router-link to="/Threedays" class="nav-link">
                 3 ngày tới
@@ -62,20 +57,32 @@
                 15 ngày tới
               </router-link>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="/ha-noi/30-ngay-toi"> 30 ngày tới </a>
-            </li> -->
           </ul>
         </div>
       </nav>
     </div>
   </header>
+  </div>
 </template>
 
 <script>
 import "../assets/css/Header.css";
+import { mapMutations } from 'vuex';
 export default {
-  name,
+  data() {
+    return {
+      cityName: '',
+    };
+  },
+  methods: {
+    ...mapMutations(['setCityName']),
+   
+    updateCityName() {
+      // Gọi mutation để cập nhật cityName trong Vuex
+      this.setCityName(this.cityName);
+      //  console.log(this.cityName);
+    },
+  },
 };
 </script>
 <style scoped></style>
