@@ -80,13 +80,15 @@ import axios from "axios";
 
 export default {
   name,
- 
+
+
      computed: {
     ...mapState(['cityName']),
+    
   },
   data() {
     return {
-      // cityName:"",
+    
       weatherData:[],
       currentTemperature: '',
       humidity: '',
@@ -114,13 +116,18 @@ export default {
          this.pressure= Math.round(response.data.main.pressure * 0.029529987);
          this.wind=response.data.wind.speed;
 
-         console.log(this.cityName);
+      
       } catch (error) {
         console.log(error);
-        this.weatherData= null;
+        
       }
     },
   },
+  
+  
+  // created(){
+  //   this.getWeatherData();
+  // },
   mounted(){
    this.getWeatherData();
   }

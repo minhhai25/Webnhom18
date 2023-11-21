@@ -21,7 +21,7 @@
           
           id="searchInput"
         />
-        <button class="btn btn-outline-success" type="submit" @click="updateCityName">Tìm kiếm</button>
+        <button class="btn btn-outline-success" type="submit" >Tìm kiếm</button>
       </form>
     </div>
     <div class="my-3 sticky-top">
@@ -72,6 +72,7 @@ export default {
   data() {
     return {
       cityName: '',
+      key:0,
     };
   },
   methods: {
@@ -80,9 +81,14 @@ export default {
     updateCityName() {
       // Gọi mutation để cập nhật cityName trong Vuex
       this.setCityName(this.cityName);
-      //  console.log(this.cityName);
+     
+      this.key++
+      console.log(this.key)
     },
   },
+  // mounted(){
+  //   this.updateCityName();
+  // }
 };
 </script>
 <style scoped></style>
